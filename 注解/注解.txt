@@ -1,7 +1,7 @@
 @Target(ElementType.TYPE) // 参考 ElementType.java
 @Retention(RetentionPolicy.RUNTIME) // 参考 RetentionPolicy.java
-@Documented
-@Inherited
+@Documented // 参考 注解四天王.txt
+@Inherited // 参考 注解四天王.txt
 @SpringBootConfiguration
 @EnableAutoConfiguration
 @ComponentScan(excludeFilters = { @Filter(type = FilterType.CUSTOM, classes = TypeExcludeFilter.class),
