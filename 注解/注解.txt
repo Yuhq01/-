@@ -1,5 +1,5 @@
 @Target(ElementType.TYPE) // 参考 ElementType.java
-@Retention(RetentionPolicy.RUNTIME)
+@Retention(RetentionPolicy.RUNTIME) // 参考 RetentionPolicy.java
 @Documented
 @Inherited
 @SpringBootConfiguration
