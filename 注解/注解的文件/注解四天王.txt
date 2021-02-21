@@ -1,0 +1,60 @@
+Java注解--@Target@Retention@Documented详解~
+
+变优秀的小白 2019-09-17 13:47:38  291  收藏 1
+分类专栏： # Java 文章标签： java注解 @Target @Retention @Document @Inherited
+版权
+Java注解–@Target@Retention@Documented@Inherited
+导语：自动化测试的必经之路–Java注解
+
+作者：变优秀的小白
+
+QQ学习交流群(new): 811792998
+
+注：如中途遇到不懂的地方，直接评论留言看到会马上答疑！
+今天在看手写Spring源码中，遇到的一些Java的注解便想着顺手来写个博客记录一下。
+话不多说，实战为主！
+Java除了本身内置的三种标准注解，此外还有四种元注解，这次我们主要针对元注解进行讲解。
+
+你是不是有疑问注解/元注解是什么？用来做什么？为什么有它？
+注解是什么
+1.我们可以将代码抽象为一个实体对象，注解就是对于这个代码实体对象赋予一个标签，可以理解为注解就是一个标签的存在。
+比如（创建了一个TestAnnotation注解标签定义到Test类）：
+
+@TestAnnotation
+public class Test1{
+	//这是一个注解
+}
+
+元注解什么
+2.前面讲到了注解是什么，但是注解正常工作还需要引入元注解才行，也是这次主要讲解的部分。
+
+注解是标签，元注解就是一个特殊的标签（可以通过几何图形来理解，注解为一个长方形，元注解为一个特殊的长方形（正方形）），所有标签都是来解释所贴在的实体对象的，所以元注解是用来解释注解的。
+元注解四天王：
+
+@Retention
+@Target
+@Documented
+@Inherited
+
+@Target（常用）
+ElementType.FIELD-------------------field statement（包括enum实例）
+ElementType.CONSTRUCTOR----------constructor statement
+ElementType.METHOD-----------------method statement
+ElementType.LOCAL_VARIABLE------local varibale statement
+ElementType.PACKAGE----------------package statement
+ElementType.PARAMETER-------------parameter statement
+ElementType.TYPE--------------------class,interfaces(includes annotation type) and enum statement
+
+@Rentention（常用）
+RetentionPolicy.SOURCE------------在编译成.class时被丢弃
+RetentionPolicy.CLASS--------------在.class时可用，会在JVM被丢弃
+RetentionPolicy.RUNTIME-----------JVM运行时依然可用，运行时可以通过反射机制读取注解信息
+
+@Documented（常用）
+从字面上理解为文件化的，即此注释会被包含到javadoc提取成文档
+
+@Inherited（常用）
+从字面上理解就是继承，就是一个父类被贴上@Inherited标签后，只要其子类没有被任何注解运用，该子类就继承了父类的注解。也就是说不管其子类还是子类的子类都有这个标签。
+
+结束语：大家如果有什么疑问或者建议的地方，可直接留言评论！本人会一一回复！！
+如果小白的博客有建议或批评的，下方留言即可！如果觉得小白还不错的，留下你的点赞和关注哦！！
